@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Noto+Sans+KR:wght@100..900&display=swap");
+
+.lightoutsoul {
+  width: 600px;
+  position: absolute;
+  top: 200px;
+  left: 416px;
+
+  transition:
+    left 1.4s,
+    top 1.4s,
+    width 1.4s;
+}
+
+.logo,
+.light {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  z-index: 1; /* 아래 표시 */
+}
+
+.light {
+  z-index: 2;
+  animation: twinkle 1.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 5px rgb(252, 252, 210));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 20px rgb(252, 252, 210));
+  }
+  100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 5px rgb(252, 252, 210));
+  }
+}
+
+.main {
+  width: 620px;
+  position: absolute;
+  top: 153px;
+  left: 140px;
+  z-index: 1;
+}
+
+.squarelight {
+  width: 1436px;
+  height: 734px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+
+  opacity: 0;
+}
+
+@keyframes lightOn {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0.2;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0.8;
+  }
+
+  95% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.squarelight.show {
+  animation: lightOn 0.6s forwards;
+}
+
+.side {
+  width: 209px;
+  height: 733.5px;
+  background-color: rgb(21, 24, 69);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#poster.scene2 .lightoutsoul {
+  top: 20px;
+  left: 950px;
+  width: 450px;
+}
+
+#poster.scene2 .light {
+  animation: none;
+  opacity: 1;
+  filter: none;
+}
+
+.sentence {
+  position: absolute;
+  top: 350px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 500px;
+
+  font-family: "Boogaloo", cursive;
+  font-size: 35px;
+  color: rgb(60, 117, 194);
+
+  text-align: center;
+}
+
+.line1,
+.line2 {
+  width: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  margin: 0 auto;
+
+  border-right: 2px solid rgb(60, 117, 194);
+}
+
+.line1.show {
+  opacity: 1;
+
+  animation:
+    typing1 1.5s steps(15) forwards,
+    blink 0.7s 2;
+}
+
+.line2.show {
+  opacity: 1;
+
+  animation:
+    typing2 0.8s steps(4) forwards,
+    blink 0.7s 2;
+}
+
+@keyframes typing1 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 15ch;
+  }
+}
+
+@keyframes typing2 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 4ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.leaf {
+  width: 35px;
+  position: absolute;
+
+  top: 50px;
+  left: 915px;
+
+  opacity: 0;
+  z-index: 6;
+
+  transition: opacity 0.5s ease;
+}
+
+.leaf.fly {
+  animation: leafFly 2s ease-in-out forwards;
+}
+
+@keyframes leafFly {
+  from {
+    left: 915px;
+    top: 50px;
+  }
+
+  to {
+    left: 350px;
+    top: 400px;
+  }
+}
+.man2 {
+  width: 160px;
+  position: absolute;
+
+  top: 384px;
+  left: 264px;
+
+  z-index: 0;
+
+  opacity: 0;
+}
+
+.man2.show {
+  animation: revealHand 0.4s forwards;
+}
+
+@keyframes revealHand {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.maker {
+  width: 150px;
+  position: absolute;
+  top: 30px;
+  left: 1150px;
+
+  opacity: 0;
+}
+
+.maker.show {
+  animation: revealMaker 0.2s forwards;
+}
+.open {
+  width: 200px;
+  position: absolute;
+  top: 670px;
+  left: 30px;
+
+  opacity: 0;
+  z-index: 6;
+}
+.open.show {
+  animation: revealMaker 0.2s forwards;
+}
+@keyframes revealMaker {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
